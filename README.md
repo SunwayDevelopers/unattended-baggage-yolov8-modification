@@ -14,7 +14,7 @@ and specify the modified architecture after adding BiFormer Attention Mechanism
 
 #### Second Step: define the BiFormer Attention Mechanism code
 
-add the `Biformer Attention` code into `ultralytics/nn/modules/block.py`
+add the `Biformer Attention` and `corresponding-attention-mechansim-into-Biform` code into `ultralytics/nn/modules/block.py`
 
 #### Third Step: import the BiFormer Attention Mechanism into the yolov8 
 
@@ -24,3 +24,9 @@ import `Biformer Attention` into `ultralytics/modules/__init__.py` and also `ult
 #### Fourth Step: Train the modified YOLOv8 model
 
 Train a model using this modified `YOLOv8-BiLevelRoutingAttention` model
+
+#### Note:
+
+1) You need to pip install the local modified ultralytics into pip venv environment only can reflect the changes and use it. 
+2) u can use it by `pip install -e .`
+3) you no need to repip install it as it will constantly listen to ur changes.
