@@ -16,7 +16,7 @@ Example:
     os.system(f'onnxsim {f} {f} && open {f}')
     ```
 """
-
+ # new attention mechanism into block
 from .block import (
     C1,
     C2,
@@ -46,7 +46,9 @@ from .block import (
     RepNCSPELAN4,
     ResNetLayer,
     Silence,
+    BiLevelRoutingAttention
 )
+
 from .conv import (
     CBAM,
     ChannelAttention,
@@ -135,4 +137,5 @@ __all__ = (
     "CBFuse",
     "CBLinear",
     "Silence",
+    "BiLevelRoutingAttention" # new attention mechanism
 )
