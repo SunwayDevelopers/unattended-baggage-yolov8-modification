@@ -929,7 +929,7 @@ def parse_model(d, ch, verbose=True):  # model_dict, input_channels(3)
             c2 = ch[f[-1]]
         elif m in [BiLevelRoutingAttention]:
             c2 = ch[f]
-            args = [c2, *args[0:]]  ### Add BiLevelRoutingAttention here
+            args = [c2, *args[1:]]  ### Add BiLevelRoutingAttention here
         else:
             c2 = ch[f]
 
