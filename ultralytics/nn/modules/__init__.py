@@ -46,7 +46,8 @@ from .block import (
     RepNCSPELAN4,
     ResNetLayer,
     Silence,
-    BiLevelRoutingAttention
+    BiLevelRoutingAttention,
+    ShuffleAttention,
 )
 
 from .conv import (
@@ -137,5 +138,6 @@ __all__ = (
     "CBFuse",
     "CBLinear",
     "Silence",
-    "BiLevelRoutingAttention" # new attention mechanism
+    "BiLevelRoutingAttention",
+    "ShuffleAttention", # new attention mechanism
 )
