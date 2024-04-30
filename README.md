@@ -30,3 +30,11 @@ Train a model using this modified `YOLOv8-BiLevelRoutingAttention` model
 1) You need to pip install the local modified ultralytics into pip venv environment only can reflect the changes and use it. 
 2) u can use it by `pip install -e .`
 3) you no need to repip install it as it will constantly listen to ur changes.
+4) Connect GCS in vertex AI
+
+```
+MY_BUCKET=compiled-training-data
+cd ~/
+gcsfuse --implicit-dirs --rename-dir-limit=100 --max-conns-per-host=100 $MY_BUCKET "/home/jupyter/gcs"
+
+```
