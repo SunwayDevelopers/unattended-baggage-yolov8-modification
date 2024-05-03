@@ -37,6 +37,7 @@ __all__ = (
     "CBFuse",
     "CBLinear",
     "Silence",
+    "space_to_depth",
     "BiLevelRoutingAttention",
     "ShuffleAttention", #Attentions
 )
@@ -687,6 +688,19 @@ class CBFuse(nn.Module):
         out = torch.sum(torch.stack(res + xs[-1:]), dim=0)
         return out
 
+#####################################
+# space_to_depth SPD_Conv #
+#####################################
+
+class space_to_depth(nn.Module):
+    # Changing the dimension of the Tensor
+    def __init__(self, dimension=1):
+        super().__init__()
+        self.d = dimension
+
+    def forward(self, x):
+        return torch.cat([x[..., ::2, ::2], x[..., 1::2, ::2], x[..., ::2, 1::2], x[..., 1::2, 1::2]], 1)
+    
 # ------------------------------------------------
 from torch import Tensor
 from typing import Tuple
@@ -759,9 +773,9 @@ class QKVLinear(nn.Module):
 
         return q, kv
     
-###########################
-# New Attention Mechanism #
-###########################
+#####################################
+# BiLevelRoutingAttention Mechanism #
+#####################################
 class BiLevelRoutingAttention(nn.Module):
     """
     n_win: number of windows in one side (so the actual number of windows is n_win*n_win)
@@ -971,3 +985,4 @@ class ShuffleAttention(nn.Module):
         # channel shuffle
         out = self.channel_shuffle(out, 2)
         return out
+    

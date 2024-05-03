@@ -46,6 +46,7 @@ from .block import (
     RepNCSPELAN4,
     ResNetLayer,
     Silence,
+    space_to_depth,
     BiLevelRoutingAttention,
     ShuffleAttention,
 )
