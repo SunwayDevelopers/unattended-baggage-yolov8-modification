@@ -47,6 +47,7 @@ from .block import (
     ResNetLayer,
     Silence,
     space_to_depth,
+    CSPStage,
     BiLevelRoutingAttention,
     ShuffleAttention,
 )
@@ -139,6 +140,7 @@ __all__ = (
     "CBFuse",
     "CBLinear",
     "Silence",
+    "CSPStage",
     "BiLevelRoutingAttention",
     "ShuffleAttention", # new attention mechanism
 )
